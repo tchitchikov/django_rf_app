@@ -1,0 +1,30 @@
+
+Install the latest Django (2.1 dev at the time of writing)
+    - git clone git://github.com/django/django.git
+    - virtualenv django/
+    - pip3 install -e django
+
+Setup the project:
+    - django-admin startproject coins_ph
+    - cd ./coins_ph
+    - django-admin startapp banking
+    - pip3 install mysqlclient
+    - sudo apt install mysql-server mysql-client mysql-server-5.7
+    - mysql --user=root --password=*****
+    - mysql> CREATE USER 'coins_ph'@'localhost';
+    - mysql> GRANT PRIVILEGES * . * 'coins_ph'@'localhost';
+    - mysql> CREATE DATABASE coins_ph_banking;
+    - in settings.py add banking to the installed apps 
+    - in settings.py change the database to mysql and set the user to coins_ph
+    - > python3 manage.py migrate
+    - > python3 manage.py makemigrations banking
+    - 
+
+Setup an initial RESTful call:
+    - Build the model
+    - Build the serializer
+    - Write the view
+    - Write the url
+    - Make the migration
+    - start the server
+    - call the url
